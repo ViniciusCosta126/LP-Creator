@@ -90,6 +90,7 @@ video {
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
+    font-family: "Poppins", sans-serif;
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -131,5 +132,9 @@ table {
 @media (min-width: 1024px) {
     .containerAside {
         display: flex;
+    }
+
+    .mainContent {
+        padding-top: 20px;
     }
 }

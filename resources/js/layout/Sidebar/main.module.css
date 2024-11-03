@@ -1,24 +1,56 @@
 .containerSidebar {
     height: 100vh;
+    color: #fff;
+    margin-right: 20px;
 }
 
 .container {
     width: 0;
     transition: all 0.2s ease;
     opacity: 0;
+    padding: 20px 10px;
 }
 
 .containerOpen {
-    background-color: blue;
+    background-color: #14248a;
     width: 100vw;
     height: 100%;
     transition: all 0.2s ease;
     opacity: 1;
 }
 
+.titleSideBar {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 8px;
+    margin-bottom: 20px;
+}
+
+.componentContainer {
+    padding: 0 10px;
+}
+
+.componentItem {
+    font-size: 18px;
+    margin-bottom: 12px;
+    padding: 10px;
+    transition: all 0.2s;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.componentItem:hover {
+    background-color: #8290ed;
+    transition: all 0.2s;
+}
+
 @media (min-width: 1024px) {
+    .titleSideBar {
+        font-size: 32px;
+        padding-top: 12px;
+    }
     .containerOpen {
-        background-color: blue;
-        width: 20vw;
+        width: 24vw;
     }
 }

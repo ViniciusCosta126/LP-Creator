@@ -16,17 +16,14 @@ export const SideBar = ({loadComponent}) => {
         <div className={styles.containerSidebar}>
             <button onClick={() => setOpenSideBar(!openSidebar)}>Abrir sidebar</button>
             <div className={openSidebar ? styles.containerOpen : styles.container}>
-                <h1>Árvore de componentes</h1>
-                <ul>
+                <h2 className={styles.titleSideBar}>Árvore de componentes</h2>
+                <ul className={styles.componentContainer}>
                     {componentNames.map((name, index) => (
-                        <li key={name} onClick={() => loadComponent(componentPaths[index])}>
+                        <li className={styles.componentItem} key={name} onClick={() => loadComponent(componentPaths[index])}>
                             {name}
                         </li>
                     ))}
                 </ul>
-            </div>
-            <div className={styles.mainContent}>
-               
             </div>
         </div>
     );

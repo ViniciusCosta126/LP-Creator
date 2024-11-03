@@ -1,7 +1,7 @@
 {
     "title": "NovoComponente Block",
     "settings": {
-        "background_color": "#ffffff",
-        "text": "Exemplo de 31231231"
+        "background_color": "#D4C2FC",
+        "text": "Botao submit"
     }
 }

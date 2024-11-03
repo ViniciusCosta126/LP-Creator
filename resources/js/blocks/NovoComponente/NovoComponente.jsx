@@ -10,7 +10,7 @@ const NovoComponente = () => {
     }, [settings]);
 
     return (
-        <div className="block-novocomponente" style={{ backgroundColor: settings.background_color }}>
+        <div className="novoComponente" style={{ backgroundColor: settings.background_color }}>
             <p>{settings.text}</p>
         </div>
     );

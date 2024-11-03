@@ -24,7 +24,10 @@ const App = () => {
     return (
         <div className="containerAside">
             <SideBar loadComponent={loadComponent}/>
+            <div className="mainContent">
             {ActiveComponent && <ActiveComponent />}
+            </div>
+
         </div>
     );
 };

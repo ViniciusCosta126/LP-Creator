@@ -1,2 +1,14 @@
 /* Estilos para o bloco NovoComponente */
 
+.novoComponente {
+    height: fit-content;
+    padding: 8px 10px;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.novoComponente:hover {
+    background-color: #ad8af9 !important;
+    transition: all 0.2s;
+    scale: 1.1;
+}
