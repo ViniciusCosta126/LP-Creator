@@ -19,6 +19,7 @@ class MakeBlock extends Command
         $jsPath = "{$componentDirectory}/{$name}.jsx";
         $configPath = "{$componentDirectory}/config.json";
         $cssPath = "{$componentDirectory}/{$name}.css";
+        $componentesPath = resource_path('js/componentes.json'); // Caminho do JSON
 
         if (!File::exists($componentDirectory)) {
             File::makeDirectory($componentDirectory, 0755, true);
@@ -39,6 +40,9 @@ class MakeBlock extends Command
         ], JSON_PRETTY_PRINT));
 
         File::put($cssPath, "/* Estilos para o bloco {$name} */\n\n");
+
+        // Adiciona o componente ao componentes.json
+        $this->addComponentToJson($name, "./blocks/$name/$name.jsx");
 
         $this->info("Bloco {$name} criado com sucesso!");
     }
@@ -68,5 +72,28 @@ const {$name} = () => {
 
 export default {$name};
 JS;
+    }
+
+    private function addComponentToJson($name, $path)
+    {
+        $componentesPath = resource_path('js/componentes.json'); // Caminho do JSON
+
+        // Verifica se o arquivo componentes.json existe
+        if (File::exists($componentesPath)) {
+            // Lê o conteúdo do arquivo
+            $componentes = json_decode(File::get($componentesPath), true);
+        } else {
+            // Cria um array vazio se o arquivo não existir
+            $componentes = [];
+        }
+
+        // Adiciona o novo componente como um objeto
+        $componentes[] = [
+            'name' => $name,
+            'path' => $path
+        ];
+
+        // Salva o array de volta no arquivo componentes.json
+        File::put($componentesPath, json_encode($componentes, JSON_PRETTY_PRINT));
     }
 }

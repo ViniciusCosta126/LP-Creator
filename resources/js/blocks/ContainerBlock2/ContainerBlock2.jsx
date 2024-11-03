@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import './Teste.css';
+import './ContainerBlock2.css';
 import config from './config.json';
 
-const Teste = () => {
+const ContainerBlock2 = () => {
     const [settings, setSettings] = useState(config.settings);
 
     useEffect(() => {
@@ -10,10 +10,10 @@ const Teste = () => {
     }, [settings]);
 
     return (
-        <div className="block-teste" style={{ backgroundColor: settings.background_color }}>
+        <div className="block-containerblock2" style={{ backgroundColor: settings.background_color }}>
             <p>{settings.text}</p>
         </div>
     );
 };
 
-export default Teste;
+export default ContainerBlock2;

@@ -1,0 +1,10 @@
+[
+    {
+        "name": "ContainerBlock2",
+        "path": ".\/blocks\/ContainerBlock2\/ContainerBlock2.jsx"
+    },
+    {
+        "name": "NovoComponente",
+        "path": ".\/blocks\/NovoComponente\/NovoComponente.jsx"
+    }
+]
