@@ -6,6 +6,11 @@
     margin-bottom: 20px;
 }
 
+.categoriaTitulo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
 .componentContainer {
     padding: 0 10px;
 }

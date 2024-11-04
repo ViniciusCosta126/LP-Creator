@@ -55,7 +55,7 @@ class MakeBlock extends Command
         File::put($cssPath, "/* Estilos para o bloco {$name} */\n\n");
 
         // Adiciona o componente ao componentes.json
-        $this->addComponentToJson($name, "./blocks/$categoria/$name/$name.jsx");
+        $this->addComponentToJson($name, "./blocks/$categoria/$name/$name.jsx", $categoria);
 
         $this->info("Bloco {$name} criado com sucesso!");
     }
@@ -87,7 +87,7 @@ export default {$name};
 JS;
     }
 
-    private function addComponentToJson($name, $path)
+    private function addComponentToJson($name, $path, $categoria)
     {
         $componentesPath = resource_path('js/componentes.json');
 
@@ -99,6 +99,7 @@ JS;
 
         $componentes[] = [
             'name' => $name,
+            'categoria' => $categoria,
             'path' => $path
         ];
 

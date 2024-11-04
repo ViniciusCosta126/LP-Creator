@@ -6,7 +6,7 @@ import { FaBars } from "react-icons/fa";
 export const SideBar = ({ loadComponent, setOpenSideBar, openSidebar }) => {
     const componentNames = componentsConfig.map((comp) => comp.name);
     const componentPaths = componentsConfig.map((comp) => comp.path);
-
+    const componentCategories = componentsConfig.map((comp) => comp.categoria);
     return (
         <>
             <div className="header">
@@ -20,16 +20,62 @@ export const SideBar = ({ loadComponent, setOpenSideBar, openSidebar }) => {
             </div>
             <div className={`sidebar ${openSidebar ? "show" : "hidden"}`}>
                 <h2 className={styles.titleSideBar}>Árvore de componentes</h2>
+
+                <h3 className={styles.categoriaTitulo}>Atomos</h3>
                 <ul className={styles.componentContainer}>
-                    {componentNames.map((name, index) => (
-                        <li
-                            className={styles.componentItem}
-                            key={name}
-                            onClick={() => loadComponent(componentPaths[index])}
-                        >
-                            {name}
-                        </li>
-                    ))}
+                    {componentNames.map((name, index) => {
+                        if (componentCategories[index] === "atomo") {
+                            return (
+                                <li
+                                    className={styles.componentItem}
+                                    key={name}
+                                    onClick={() =>
+                                        loadComponent(componentPaths[index])
+                                    }
+                                >
+                                    {name}
+                                </li>
+                            );
+                        }
+                    })}
+                </ul>
+
+                <h3 className={styles.categoriaTitulo}>Celulas</h3>
+                <ul className={styles.componentContainer}>
+                    {componentNames.map((name, index) => {
+                        if (componentCategories[index] === "celula") {
+                            return (
+                                <li
+                                    className={styles.componentItem}
+                                    key={name}
+                                    onClick={() =>
+                                        loadComponent(componentPaths[index])
+                                    }
+                                >
+                                    {name}
+                                </li>
+                            );
+                        }
+                    })}
+                </ul>
+
+                <h3 className={styles.categoriaTitulo}>Organismos</h3>
+                <ul className={styles.componentContainer}>
+                    {componentNames.map((name, index) => {
+                        if (componentCategories[index] === "organismo") {
+                            return (
+                                <li
+                                    className={styles.componentItem}
+                                    key={name}
+                                    onClick={() =>
+                                        loadComponent(componentPaths[index])
+                                    }
+                                >
+                                    {name}
+                                </li>
+                            );
+                        }
+                    })}
                 </ul>
             </div>
         </>

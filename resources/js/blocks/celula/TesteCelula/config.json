@@ -1,6 +1,6 @@
 {
-    "title": "Container Block",
-    "categoria": "atomo",
+    "title": "TesteCelula Block",
+    "categoria": "celula",
     "atributos": {
         "background_color": {
             "tipo": "color",
