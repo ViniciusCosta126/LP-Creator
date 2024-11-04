@@ -21,10 +21,10 @@ export const SideBar = ({ loadComponent, setOpenSideBar, openSidebar }) => {
             <div className={`sidebar ${openSidebar ? "show" : "hidden"}`}>
                 <h2 className={styles.titleSideBar}>Árvore de componentes</h2>
 
-                <h3 className={styles.categoriaTitulo}>Atomos</h3>
+                <h3 className={styles.categoriaTitulo}>Elementos</h3>
                 <ul className={styles.componentContainer}>
                     {componentNames.map((name, index) => {
-                        if (componentCategories[index] === "atomo") {
+                        if (componentCategories[index] === "elemento") {
                             return (
                                 <li
                                     className={styles.componentItem}
@@ -40,10 +40,10 @@ export const SideBar = ({ loadComponent, setOpenSideBar, openSidebar }) => {
                     })}
                 </ul>
 
-                <h3 className={styles.categoriaTitulo}>Celulas</h3>
+                <h3 className={styles.categoriaTitulo}>Blocos</h3>
                 <ul className={styles.componentContainer}>
                     {componentNames.map((name, index) => {
-                        if (componentCategories[index] === "celula") {
+                        if (componentCategories[index] === "bloco") {
                             return (
                                 <li
                                     className={styles.componentItem}
@@ -59,10 +59,10 @@ export const SideBar = ({ loadComponent, setOpenSideBar, openSidebar }) => {
                     })}
                 </ul>
 
-                <h3 className={styles.categoriaTitulo}>Organismos</h3>
+                <h3 className={styles.categoriaTitulo}>Seções</h3>
                 <ul className={styles.componentContainer}>
                     {componentNames.map((name, index) => {
-                        if (componentCategories[index] === "organismo") {
+                        if (componentCategories[index] === "secoes") {
                             return (
                                 <li
                                     className={styles.componentItem}

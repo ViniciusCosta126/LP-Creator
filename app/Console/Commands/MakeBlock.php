@@ -9,7 +9,7 @@ class MakeBlock extends Command
 {
     protected $signature = 'make:block {name} {categoria}';
     protected $description = 'Cria um novo bloco funcional para a Landing Page';
-    protected $allowedCategories = ['atomo', 'celula', 'organismo'];
+    protected $allowedCategories = ['elemento', 'bloco', 'secoes'];
 
     public function handle()
     {
@@ -49,6 +49,22 @@ class MakeBlock extends Command
                 'text' => [
                     "tipo" => "text",
                     "default" => "Teste de texto"
+                ],
+                "margin_top" => [
+                    "tipo" => "number",
+                    "default" => 10
+                ],
+                "margin_bottom" => [
+                    "tipo" => "number",
+                    "default" => 10
+                ],
+                "padding_top" => [
+                    "tipo" => "number",
+                    "default" => 10
+                ],
+                "padding_bottom" => [
+                    "tipo" => "number",
+                    "default" => 10
                 ]
             ]
         ], JSON_PRETTY_PRINT));
@@ -80,7 +96,17 @@ const {$name} = () => {
     }, [settings]);
 
     return (
-        <div className="{$nameLower}" style={{ backgroundColor: settings.background_color.default }} onClick={()=>setIsOpen(true)}>
+        <div
+            className="{$nameLower}"
+            style={{
+                backgroundColor: settings.background_color.default,
+                marginTop: settings.margin_top.default + 'px',
+                marginBottom: settings.margin_bottom.default + 'px',
+                paddingTop: settings.padding_top.default + 'px',
+                paddingBottom: settings.padding_bottom.default + 'px',
+            }}
+            onClick={() => setIsOpen(true)}
+        >
             <p>{settings.text.default}</p>
             <BarConfig setSettings={setSettings} settings={settings} isOpen={isOpen} setIsOpen={setIsOpen} />
         </div>
