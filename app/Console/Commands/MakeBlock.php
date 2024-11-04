@@ -7,19 +7,25 @@ use Illuminate\Support\Facades\File;
 
 class MakeBlock extends Command
 {
-    protected $signature = 'make:block {name}';
+    protected $signature = 'make:block {name} {categoria}';
     protected $description = 'Cria um novo bloco funcional para a Landing Page';
+    protected $allowedCategories = ['atomo', 'celula', 'organismo'];
 
     public function handle()
     {
         $name = $this->argument('name');
+        $categoria = $this->argument('categoria');
 
-        // Caminhos para os arquivos
-        $componentDirectory = resource_path("js/blocks/{$name}");
+        if (!in_array($categoria, $this->allowedCategories)) {
+            $this->error("A categoria '{$categoria}' não é válida. Escolha entre: " . implode(', ', $this->allowedCategories));
+            return;
+        }
+
+        $componentDirectory = resource_path("js/blocks/{$categoria}/{$name}");
         $jsPath = "{$componentDirectory}/{$name}.jsx";
         $configPath = "{$componentDirectory}/config.json";
         $cssPath = "{$componentDirectory}/{$name}.css";
-        $componentesPath = resource_path('js/componentes.json'); // Caminho do JSON
+        $componentesPath = resource_path('js/componentes.json');
 
         if (!File::exists($componentDirectory)) {
             File::makeDirectory($componentDirectory, 0755, true);
@@ -33,16 +39,23 @@ class MakeBlock extends Command
         File::put($jsPath, $this->getBlockJavaScript($name));
         File::put($configPath, json_encode([
             'title' => "{$name} Block",
-            'settings' => [
-                'background_color' => '#ffffff',
-                'text' => 'Exemplo de texto'
+            'categoria' => "{$categoria}",
+            'atributos' => [
+                'background_color' => [
+                    "tipo" => "color",
+                    "default" => "#fff"
+                ],
+                'text' => [
+                    "tipo" => "text",
+                    "default" => "Teste de texto"
+                ]
             ]
         ], JSON_PRETTY_PRINT));
 
         File::put($cssPath, "/* Estilos para o bloco {$name} */\n\n");
 
         // Adiciona o componente ao componentes.json
-        $this->addComponentToJson($name, "./blocks/$name/$name.jsx");
+        $this->addComponentToJson($name, "./blocks/$categoria/$name/$name.jsx");
 
         $this->info("Bloco {$name} criado com sucesso!");
     }
@@ -57,15 +70,15 @@ import './{$name}.css';
 import config from './config.json';
 
 const {$name} = () => {
-    const [settings, setSettings] = useState(config.settings);
+    const [settings, setSettings] = useState(config.atributos);
 
     useEffect(() => {
-        console.log('Configurações do bloco:', settings);
+    
     }, [settings]);
 
     return (
-        <div className="block-{$nameLower}" style={{ backgroundColor: settings.background_color }}>
-            <p>{settings.text}</p>
+        <div className="{$nameLower}" style={{ backgroundColor: settings.background_color.default }}>
+            <p>{settings.text.default}</p>
         </div>
     );
 };
@@ -76,18 +89,14 @@ JS;
 
     private function addComponentToJson($name, $path)
     {
-        $componentesPath = resource_path('js/componentes.json'); // Caminho do JSON
+        $componentesPath = resource_path('js/componentes.json');
 
-        // Verifica se o arquivo componentes.json existe
         if (File::exists($componentesPath)) {
-            // Lê o conteúdo do arquivo
             $componentes = json_decode(File::get($componentesPath), true);
         } else {
-            // Cria um array vazio se o arquivo não existir
             $componentes = [];
         }
 
-        // Adiciona o novo componente como um objeto
         $componentes[] = [
             'name' => $name,
             'path' => $path

@@ -1,10 +1,10 @@
 [
     {
-        "name": "ContainerBlock2",
-        "path": ".\/blocks\/ContainerBlock2\/ContainerBlock2.jsx"
+        "name": "Container",
+        "path": ".\/blocks\/atomo\/Container\/Container.jsx"
     },
     {
-        "name": "NovoComponente",
-        "path": ".\/blocks\/NovoComponente\/NovoComponente.jsx"
+        "name": "Botao",
+        "path": ".\/blocks\/atomo\/Botao\/Botao.jsx"
     }
 ]

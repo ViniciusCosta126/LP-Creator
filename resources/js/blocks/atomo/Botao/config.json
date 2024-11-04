@@ -1,0 +1,14 @@
+{
+    "title": "Botao Block",
+    "categoria": "atomo",
+    "atributos": {
+        "background_color": {
+            "tipo": "color",
+            "default": "#fff"
+        },
+        "text": {
+            "tipo": "text",
+            "default": "Teste de texto"
+        }
+    }
+}

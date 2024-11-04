@@ -138,6 +138,7 @@ table {
     grid-template-rows: auto 1fr;
     height: 100vh;
     transition: grid-template-columns 0.3s ease;
+    overflow: hidden;
 }
 
 .header {
@@ -158,10 +159,12 @@ table {
     gap: 15px;
     transition: transform 0.3s ease;
 }
+
 .content {
     grid-area: content;
     padding: 20px;
-
+    overflow: hidden;
+    overflow-y: auto;
     transition: width 0.3s ease;
 }
 
