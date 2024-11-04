@@ -3,5 +3,10 @@
         "name": "Botao",
         "categoria": "elemento",
         "path": ".\/blocks\/elemento\/Botao\/Botao.jsx"
+    },
+    {
+        "name": "Divider",
+        "categoria": "elemento",
+        "path": ".\/blocks\/elemento\/Divider\/Divider.jsx"
     }
 ]
