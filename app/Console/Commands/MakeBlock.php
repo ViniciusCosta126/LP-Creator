@@ -96,6 +96,7 @@ const {$name} = () => {
     }, [settings]);
 
     return (
+        <>
         <div
             className="{$nameLower}"
             style={{
@@ -107,9 +108,10 @@ const {$name} = () => {
             }}
             onClick={() => setIsOpen(true)}
         >
-            <p>{settings.text.default}</p>
-            <BarConfig setSettings={setSettings} settings={settings} isOpen={isOpen} setIsOpen={setIsOpen} />
+            <p>{settings.text.default}</p>     
         </div>
+        <BarConfig setSettings={setSettings} settings={settings} isOpen={isOpen} setIsOpen={setIsOpen} />
+        </>
     );
 };
 

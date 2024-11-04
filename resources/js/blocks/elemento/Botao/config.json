@@ -1,0 +1,43 @@
+{
+    "title": "Botao Block",
+    "categoria": "elemento",
+    "atributos": {
+        "background_color": {
+            "tipo": "color",
+            "default": "#9d50ff"
+        },
+        "text": {
+            "tipo": "text",
+            "default": "Teste de texto"
+        },
+        "margin_top": {
+            "tipo": "number",
+            "default": 10
+        },
+        "margin_bottom": {
+            "tipo": "number",
+            "default": 10
+        },
+        "padding_top": {
+            "tipo": "number",
+            "default": 10
+        },
+        "padding_bottom": {
+            "tipo": "number",
+            "default": 10
+        },
+        "border_radius":{
+            "tipo":"number",
+            "default":8
+        },
+        "color":{
+            "tipo":"color",
+            "default":"#fff"
+        },
+        "font_weight":{
+            "tipo":"select",
+            "opcoes":["bold",100,200,300,400,500,600,700,800,900],
+            "default":400
+        }
+    }
+}

@@ -1,0 +1,17 @@
+/* Estilos para o bloco Botao */
+
+.botao {
+    background-color: blueviolet;
+    border-radius: 8px;
+    display: block;
+    width: fit-content;
+    padding: 10px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .botao {
+        width: 100%;
+        max-width: 400px;
+    }
+}
