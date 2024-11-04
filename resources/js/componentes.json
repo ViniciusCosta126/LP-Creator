@@ -8,5 +8,10 @@
         "name": "Divider",
         "categoria": "elemento",
         "path": ".\/blocks\/elemento\/Divider\/Divider.jsx"
+    },
+    {
+        "name": "Container",
+        "categoria": "elemento",
+        "path": ".\/blocks\/elemento\/Container\/Container.jsx"
     }
 ]

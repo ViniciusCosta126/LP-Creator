@@ -1,10 +1,10 @@
 {
-    "title": "Divider Block",
+    "title": "Container Block",
     "categoria": "elemento",
     "atributos": {
         "background_color": {
             "tipo": "color",
-            "default": "#9d50ff"
+            "default": "#ffffff"
         },
         "text": {
             "tipo": "text",
@@ -12,11 +12,11 @@
         },
         "margin_top": {
             "tipo": "number",
-            "default": 0
+            "default": 10
         },
         "margin_bottom": {
             "tipo": "number",
-            "default": 0
+            "default": 10
         },
         "padding_top": {
             "tipo": "number",
