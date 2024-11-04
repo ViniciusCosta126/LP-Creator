@@ -7,17 +7,21 @@ import { SideBar } from "./layout/Sidebar/SideBar";
 import { useState } from "react";
 
 const App = () => {
-    const [ActiveComponent, setActiveComponent] = useState(null);
+    const [components, setComponents] = useState([]); // Armazena os componentes carregados
     const [openSidebar, setOpenSideBar] = useState(false);
+
     const loadComponent = async (componentPath) => {
         try {
-            const importedComponent = (
+            const ImportedComponent = (
                 await import(/* @vite-ignore */ `${componentPath}`)
             ).default;
-            setActiveComponent(() => importedComponent);
+            // Adiciona o novo componente ao array
+            setComponents((prevComponents) => [
+                ...prevComponents,
+                ImportedComponent,
+            ]);
         } catch (error) {
             console.error(`Erro ao importar o componente: ${error}`);
-            setActiveComponent(null);
         }
     };
 
@@ -29,7 +33,10 @@ const App = () => {
                 openSidebar={openSidebar}
             />
             <div className="content">
-                {ActiveComponent && <ActiveComponent />}
+                {/* Renderiza cada componente da lista de componentes carregados */}
+                {components.map((Component, index) => (
+                    <Component key={index} />
+                ))}
             </div>
         </div>
     );

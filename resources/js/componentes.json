@@ -1,12 +1,7 @@
 [
     {
-        "name": "TesteCelula",
-        "categoria": "celula",
-        "path": ".\/blocks\/celula\/TesteCelula\/TesteCelula.jsx"
-    },
-    {
-        "name": "Botao",
+        "name": "Teste2",
         "categoria": "atomo",
-        "path": ".\/blocks\/atomo\/Botao\/Botao.jsx"
+        "path": ".\/blocks\/atomo\/Teste2\/Teste2.jsx"
     }
 ]

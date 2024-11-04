@@ -1,10 +1,10 @@
 {
-    "title": "Botao Block",
+    "title": "Teste2 Block",
     "categoria": "atomo",
     "atributos": {
         "background_color": {
             "tipo": "color",
-            "default": "#fff"
+            "default": "#9d50ff"
         },
         "text": {
             "tipo": "text",
