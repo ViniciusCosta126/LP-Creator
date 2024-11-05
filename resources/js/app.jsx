@@ -6,6 +6,7 @@ import ReactDOM from "react-dom/client";
 import { SideBar } from "./layout/Sidebar/SideBar";
 import { ReactSortable } from "react-sortablejs";
 import { useEffect, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 const App = () => {
     const [components, setComponents] = useState([]); // Armazena os componentes carregados

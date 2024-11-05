@@ -4,7 +4,7 @@
     "atributos": {
         "background_color": {
             "tipo": "color",
-            "default": "#ffffff"
+            "default": "trasnparent"
         },
         "text": {
             "tipo": "text",

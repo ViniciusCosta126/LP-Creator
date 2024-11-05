@@ -13,5 +13,10 @@
         "name": "Container",
         "categoria": "elemento",
         "path": ".\/blocks\/elemento\/Container\/Container.jsx"
+    },
+    {
+        "name": "Typography",
+        "categoria": "elemento",
+        "path": ".\/blocks\/elemento\/Typography\/Typography.jsx"
     }
 ]

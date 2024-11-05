@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./main.module.css";
 import componentsConfig from "../../componentes.json";
 import { FaBars } from "react-icons/fa";
+import { v4 as uuidv4 } from "uuid";
 
 export const SideBar = ({ loadComponent, setOpenSideBar, openSidebar }) => {
     const componentNames = componentsConfig.map((comp) => comp.name);
@@ -28,7 +29,7 @@ export const SideBar = ({ loadComponent, setOpenSideBar, openSidebar }) => {
                             return (
                                 <li
                                     className={styles.componentItem}
-                                    key={name}
+                                    key={uuidv4()}
                                     onClick={() =>
                                         loadComponent(componentPaths[index])
                                     }
@@ -47,7 +48,7 @@ export const SideBar = ({ loadComponent, setOpenSideBar, openSidebar }) => {
                             return (
                                 <li
                                     className={styles.componentItem}
-                                    key={name}
+                                    key={uuidv4()}
                                     onClick={() =>
                                         loadComponent(componentPaths[index])
                                     }
@@ -66,7 +67,7 @@ export const SideBar = ({ loadComponent, setOpenSideBar, openSidebar }) => {
                             return (
                                 <li
                                     className={styles.componentItem}
-                                    key={name}
+                                    key={uuidv4()}
                                     onClick={() =>
                                         loadComponent(componentPaths[index])
                                     }
