@@ -6,10 +6,6 @@
             "tipo": "color",
             "default": "trasnparent"
         },
-        "text": {
-            "tipo": "text",
-            "default": "Teste de texto"
-        },
         "margin_top": {
             "tipo": "number",
             "default": 10
