@@ -16,9 +16,8 @@ const Typography = () => {
     return (
         <>
             <Tag
-                className="typography"
+                className={styles.typography}
                 style={{
-                    backgroundColor: settings.background_color.default,
                     marginTop: settings.margin_top.default + "px",
                     marginBottom: settings.margin_bottom.default + "px",
                     paddingTop: settings.padding_top.default + "px",

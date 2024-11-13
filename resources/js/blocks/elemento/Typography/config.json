@@ -2,10 +2,6 @@
     "title": "Typography Block",
     "categoria": "elemento",
     "atributos": {
-        "background_color": {
-            "tipo": "color",
-            "default": "trasnparent"
-        },
         "text": {
             "tipo": "text",
             "default": "Teste de texto"
