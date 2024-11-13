@@ -18,5 +18,10 @@
         "name": "Typography",
         "categoria": "elemento",
         "path": ".\/blocks\/elemento\/Typography\/Typography.jsx"
+    },
+    {
+        "name": "ContainerTexto",
+        "categoria": "bloco",
+        "path": ".\/blocks\/bloco\/ContainerTexto\/ContainerTexto.jsx"
     }
 ]

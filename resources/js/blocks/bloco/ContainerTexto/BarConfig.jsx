@@ -3,12 +3,11 @@ import { MdClose } from "react-icons/md";
 
 const BarConfig = ({ setSettings, settings, isOpen, setIsOpen }) => {
     function closeModal(e) {
-        setIsOpen(false);
         e.stopPropagation();
+        setIsOpen(false);
     }
 
     const handleSettings = (e, key) => {
-        
         const newSettings = {
             ...settings,
             [key]: {
@@ -29,7 +28,7 @@ const BarConfig = ({ setSettings, settings, isOpen, setIsOpen }) => {
                 <MdClose />
             </button>
             <form>
-                {Object.keys(settings).map((key) => (
+            {Object.keys(settings).map((key) => (
                     <div key={key}>
                         <label htmlFor={key}>{key.replace(/_/g, " ")}</label>
                         {settings[key].tipo === "select" ? (

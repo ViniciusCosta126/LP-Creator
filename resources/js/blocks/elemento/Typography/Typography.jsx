@@ -9,7 +9,10 @@ const Typography = () => {
 
     useEffect(() => {}, [settings]);
     const Tag = settings.tag.default;
-
+    const handleOpen = (e) => {
+        setIsOpen(true);
+        e.stopPropagation();
+    };
     return (
         <>
             <Tag
@@ -22,8 +25,10 @@ const Typography = () => {
                     paddingBottom: settings.padding_bottom.default + "px",
                     fontSize: settings.font_size.default + "px",
                     color: settings.color.default,
+                    fontWeight: parseInt(settings.font_weight.default),
+                    textAlign: settings.text_align.default,
                 }}
-                onClick={() => setIsOpen(true)}
+                onClick={(e) => handleOpen(e)}
             >
                 {settings.text.default}
             </Tag>

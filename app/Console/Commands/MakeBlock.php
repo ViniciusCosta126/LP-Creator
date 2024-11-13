@@ -91,9 +91,10 @@ const {$name} = () => {
     const [settings, setSettings] = useState(config.atributos);
     const [isOpen, setIsOpen] = useState(false);
 
-    useEffect(() => {
-    
-    }, [settings]);
+    const handleOpen = (e) => {
+        setIsOpen(true);
+        e.stopPropagation();
+    };
 
     return (
         <>
@@ -106,7 +107,7 @@ const {$name} = () => {
                 paddingTop: settings.padding_top.default + 'px',
                 paddingBottom: settings.padding_bottom.default + 'px',
             }}
-            onClick={() => setIsOpen(true)}
+            onClick={(e) => handleOpen(true)}
         >
             <p>{settings.text.default}</p>     
         </div>
@@ -140,12 +141,13 @@ const BarConfig = ({ setSettings, settings, isOpen, setIsOpen }) => {
             },
         };
         setSettings(newSettings);
+        e.stopPropagation();
     };
 
     if (!isOpen) return null;
 
     return (
-        <div className="bar-config show">
+        <div className="bar-config show" onClick={e=>e.stopPropagation()}>
             <h2>Ajuste as configurações do seu componente</h2>
             <button onClick={closeModal}>
                 <MdClose />

@@ -3,8 +3,8 @@ import { MdClose } from "react-icons/md";
 
 const BarConfig = ({ setSettings, settings, isOpen, setIsOpen }) => {
     function closeModal(e) {
-        e.stopPropagation();
         setIsOpen(false);
+        e.stopPropagation();
     }
 
     const handleSettings = (e, key) => {
@@ -16,12 +16,13 @@ const BarConfig = ({ setSettings, settings, isOpen, setIsOpen }) => {
             },
         };
         setSettings(newSettings);
+        e.stopPropagation();
     };
 
     if (!isOpen) return null;
 
     return (
-        <div className="bar-config show">
+        <div className="bar-config show" onClick={e=>e.stopPropagation()}>
             <h2>Ajuste as configurações do seu componente</h2>
             <button onClick={closeModal}>
                 <MdClose />

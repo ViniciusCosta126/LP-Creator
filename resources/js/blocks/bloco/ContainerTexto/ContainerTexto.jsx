@@ -1,21 +1,23 @@
 import React, { useEffect, useState } from "react";
-import styles from "./Container.module.css";
+import styles from "./ContainerTexto.module.css";
 import config from "./config.json";
 import BarConfig from "./BarConfig";
+import Container from "../../elemento/Container/Container";
+import Typography from "../../elemento/Typography/Typography";
 
-const Container = ({ children }) => {
+const ContainerTexto = () => {
     const [settings, setSettings] = useState(config.atributos);
     const [isOpen, setIsOpen] = useState(false);
 
-    useEffect(() => {}, [settings]);
     const handleOpen = (e) => {
         setIsOpen(true);
         e.stopPropagation();
     };
+
     return (
         <>
             <div
-                className={styles.container}
+                className="containertexto"
                 style={{
                     backgroundColor: settings.background_color.default,
                     marginTop: settings.margin_top.default + "px",
@@ -23,9 +25,11 @@ const Container = ({ children }) => {
                     paddingTop: settings.padding_top.default + "px",
                     paddingBottom: settings.padding_bottom.default + "px",
                 }}
-                onClick={(e) => handleOpen(e)}
+                onClick={(e) => handleOpen(true)}
             >
-                {children}
+                <Container>
+                    <Typography />
+                </Container>
             </div>
             <BarConfig
                 setSettings={setSettings}
@@ -37,4 +41,4 @@ const Container = ({ children }) => {
     );
 };
 
-export default Container;
+export default ContainerTexto;
