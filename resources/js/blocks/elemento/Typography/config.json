@@ -1,0 +1,49 @@
+{
+    "title": "Typography Block",
+    "categoria": "elemento",
+    "atributos": {
+        "text": {
+            "tipo": "text",
+            "default": "Teste de texto"
+        },
+        "font_size": {
+            "tipo": "number",
+            "default": 18
+        },
+        "color": {
+            "tipo": "color",
+            "default": "#000000"
+        },
+        "text_align": {
+            "tipo": "select",
+            "opcoes": ["center", "left", "right", "justify"],
+            "default": "left"
+        },
+        "font_weight": {
+            "tipo": "select",
+            "opcoes": [100, 200, 300, 400, 500, 600, 700, 800, 900],
+            "default": 400
+        },
+        "tag": {
+            "tipo": "select",
+            "opcoes": ["p", "h1", "h2", "h3", "h4", "h5", "h6"],
+            "default": "p"
+        },
+        "margin_top": {
+            "tipo": "number",
+            "default": 0
+        },
+        "margin_bottom": {
+            "tipo": "number",
+            "default": 0
+        },
+        "padding_top": {
+            "tipo": "number",
+            "default": 0
+        },
+        "padding_bottom": {
+            "tipo": "number",
+            "default": 0
+        }
+    }
+}

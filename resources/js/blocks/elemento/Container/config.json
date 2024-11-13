@@ -1,0 +1,26 @@
+{
+    "title": "Container Block",
+    "categoria": "elemento",
+    "atributos": {
+        "background_color": {
+            "tipo": "color",
+            "default": "trasnparent"
+        },
+        "margin_top": {
+            "tipo": "number",
+            "default": 10
+        },
+        "margin_bottom": {
+            "tipo": "number",
+            "default": 10
+        },
+        "padding_top": {
+            "tipo": "number",
+            "default": 10
+        },
+        "padding_bottom": {
+            "tipo": "number",
+            "default": 10
+        }
+    }
+}

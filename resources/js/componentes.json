@@ -1,10 +1,27 @@
 [
     {
-        "name": "ContainerBlock2",
-        "path": ".\/blocks\/ContainerBlock2\/ContainerBlock2.jsx"
+        "name": "Botao",
+        "categoria": "elemento",
+        "path": ".\/blocks\/elemento\/Botao\/Botao.jsx"
     },
     {
-        "name": "NovoComponente",
-        "path": ".\/blocks\/NovoComponente\/NovoComponente.jsx"
+        "name": "Divider",
+        "categoria": "elemento",
+        "path": ".\/blocks\/elemento\/Divider\/Divider.jsx"
+    },
+    {
+        "name": "Container",
+        "categoria": "elemento",
+        "path": ".\/blocks\/elemento\/Container\/Container.jsx"
+    },
+    {
+        "name": "Typography",
+        "categoria": "elemento",
+        "path": ".\/blocks\/elemento\/Typography\/Typography.jsx"
+    },
+    {
+        "name": "ContainerTexto",
+        "categoria": "bloco",
+        "path": ".\/blocks\/bloco\/ContainerTexto\/ContainerTexto.jsx"
     }
 ]
