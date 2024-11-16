@@ -1,14 +1,10 @@
 {
-    "title": "ContainerTexto Block",
+    "title": "ContainerTexto",
     "categoria": "bloco",
     "atributos": {
         "background_color": {
             "tipo": "color",
             "default": "#9d50ff"
-        },
-        "text": {
-            "tipo": "text",
-            "default": "Teste de texto"
         },
         "margin_top": {
             "tipo": "number",

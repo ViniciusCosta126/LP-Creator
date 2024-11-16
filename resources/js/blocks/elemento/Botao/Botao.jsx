@@ -6,7 +6,7 @@ import BarConfig from "./BarConfig";
 const Botao = () => {
     const [settings, setSettings] = useState(config.atributos);
     const [isOpen, setIsOpen] = useState(false);
-
+    const title = config.title;
     useEffect(() => {}, [settings]);
 
     return (
@@ -28,6 +28,7 @@ const Botao = () => {
                 {settings.text.default}
             </botao>
             <BarConfig
+                title={title}
                 setSettings={setSettings}
                 settings={settings}
                 isOpen={isOpen}

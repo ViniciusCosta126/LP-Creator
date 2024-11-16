@@ -6,6 +6,7 @@ import BarConfig from "./BarConfig";
 const Container = ({ children }) => {
     const [settings, setSettings] = useState(config.atributos);
     const [isOpen, setIsOpen] = useState(false);
+    const title = config.title;
 
     useEffect(() => {}, [settings]);
     const handleOpen = (e) => {
@@ -28,6 +29,7 @@ const Container = ({ children }) => {
                 {children}
             </div>
             <BarConfig
+                title={title}
                 setSettings={setSettings}
                 settings={settings}
                 isOpen={isOpen}
