@@ -40,6 +40,22 @@
     gap: 4px;
 }
 
+.buttonExport {
+    background-color: #9d4ef7;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.buttonExport:hover {
+    transition: all 0.2s ease;
+    background-color: #953cfa;
+}
 @media (min-width: 1024px) {
     .titleSideBar {
         font-size: 32px;

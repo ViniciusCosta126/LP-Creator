@@ -4,7 +4,12 @@ import componentsConfig from "../../componentes.json";
 import { FaBars } from "react-icons/fa";
 import { v4 as uuidv4 } from "uuid";
 
-export const SideBar = ({ loadComponent, setOpenSideBar, openSidebar }) => {
+export const SideBar = ({
+    loadComponent,
+    setOpenSideBar,
+    openSidebar,
+    exportHTML,
+}) => {
     const componentNames = componentsConfig.map((comp) => comp.name);
     const componentPaths = componentsConfig.map((comp) => comp.path);
     const componentCategories = componentsConfig.map((comp) => comp.categoria);
@@ -21,6 +26,9 @@ export const SideBar = ({ loadComponent, setOpenSideBar, openSidebar }) => {
             </div>
             <div className={`sidebar ${openSidebar ? "show" : "hidden"}`}>
                 <h2 className={styles.titleSideBar}>Árvore de componentes</h2>
+                <button className={styles.buttonExport} onClick={exportHTML}>
+                    Exportar como HTML
+                </button>
 
                 <h3 className={styles.categoriaTitulo}>Elementos</h3>
                 <ul className={styles.componentContainer}>
