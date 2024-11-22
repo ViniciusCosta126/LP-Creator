@@ -1,5 +1,5 @@
 {
-    "title": "Botao",
+    "title": "Teste",
     "categoria": "elemento",
     "atributos": {
         "background_color": {
@@ -25,19 +25,6 @@
         "padding_bottom": {
             "tipo": "number",
             "default": 10
-        },
-        "border_radius": {
-            "tipo": "number",
-            "default": 8
-        },
-        "color": {
-            "tipo": "color",
-            "default": "#fff"
-        },
-        "font_weight": {
-            "tipo": "select",
-            "opcoes": ["bold", 100, 200, 300, 400, 500, 600, 700, 800, 900],
-            "default": 400
         }
     }
 }

@@ -6,7 +6,7 @@ import BarConfig from "./BarConfig";
 const Divider = () => {
     const [settings, setSettings] = useState(config.atributos);
     const [isOpen, setIsOpen] = useState(false);
-
+    const title = config.title;
     useEffect(() => {}, [settings]);
 
     return (
@@ -23,6 +23,7 @@ const Divider = () => {
                 onClick={() => setIsOpen(true)}
             ></hr>
             <BarConfig
+                title={title}
                 setSettings={setSettings}
                 settings={settings}
                 isOpen={isOpen}

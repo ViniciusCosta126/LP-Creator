@@ -5,19 +5,19 @@ import ReactDOM from "react-dom/client";
 
 import { SideBar } from "./layout/Sidebar/SideBar";
 import { ReactSortable } from "react-sortablejs";
-import { useEffect, useState } from "react";
-import { v4 as uuidv4 } from "uuid";
+import { useRef, useState } from "react";
 
 const App = () => {
-    const [components, setComponents] = useState([]); // Armazena os componentes carregados
+    const [components, setComponents] = useState([]);
     const [openSidebar, setOpenSideBar] = useState(false);
+
+    const contentRef = useRef(null);
 
     const loadComponent = async (componentPath) => {
         try {
             const ImportedComponent = (
                 await import(/* @vite-ignore */ `${componentPath}`)
             ).default;
-            // Adiciona o novo componente ao array com uma chave única
             setComponents((prevComponents) => [
                 ...prevComponents,
                 { id: Date.now(), Component: ImportedComponent },
@@ -28,8 +28,45 @@ const App = () => {
     };
 
     const handleSort = (newList) => {
-        // Atualiza a ordem dos componentes sem perder o estado
         setComponents(newList);
+    };
+
+    const exportHTML = () => {
+        if (!contentRef.current) return;
+
+        const clone = contentRef.current.cloneNode(true);
+        const barConfigs = clone.querySelectorAll(".bar-config");
+        barConfigs.forEach((el) => el.remove());
+        const htmlContent = clone.innerHTML;
+
+        const fullHTML = `
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Exported Content</title>
+                <style>
+                    /* Adicione estilos customizados aqui */
+                    body {
+                        font-family: Arial, sans-serif;
+                    }
+                </style>
+            </head>
+            <body>
+                <div class="content">
+                    ${htmlContent}
+                </div>
+            </body>
+            </html>`;
+
+        const blob = new Blob([fullHTML], { type: "text/html" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "exported-content.html";
+        a.click();
+        URL.revokeObjectURL(url);
     };
 
     return (
@@ -38,8 +75,9 @@ const App = () => {
                 loadComponent={loadComponent}
                 setOpenSideBar={setOpenSideBar}
                 openSidebar={openSidebar}
+                exportHTML={exportHTML}
             />
-            <div className="content">
+            <div className="content" ref={contentRef}>
                 {/* Renderiza cada componente da lista de componentes carregados */}
                 <ReactSortable
                     list={components}

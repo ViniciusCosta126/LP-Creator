@@ -6,6 +6,7 @@ import BarConfig from "./BarConfig";
 const Typography = () => {
     const [settings, setSettings] = useState(config.atributos);
     const [isOpen, setIsOpen] = useState(false);
+    const title = config.title;
 
     useEffect(() => {}, [settings]);
     const Tag = settings.tag.default;
@@ -32,6 +33,7 @@ const Typography = () => {
                 {settings.text.default}
             </Tag>
             <BarConfig
+                title={title}
                 setSettings={setSettings}
                 settings={settings}
                 isOpen={isOpen}

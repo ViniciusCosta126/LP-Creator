@@ -8,6 +8,7 @@ import Typography from "../../elemento/Typography/Typography";
 const ContainerTexto = () => {
     const [settings, setSettings] = useState(config.atributos);
     const [isOpen, setIsOpen] = useState(false);
+    const title = config.title;
 
     const handleOpen = (e) => {
         setIsOpen(true);
@@ -32,6 +33,7 @@ const ContainerTexto = () => {
                 </Container>
             </div>
             <BarConfig
+                title={title}
                 setSettings={setSettings}
                 settings={settings}
                 isOpen={isOpen}

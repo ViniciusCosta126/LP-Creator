@@ -39,7 +39,7 @@ class MakeBlock extends Command
 
         File::put($jsPath, $this->getBlockJavaScript($name));
         File::put($configPath, json_encode([
-            'title' => "{$name} Block",
+            'title' => "{$name}",
             'categoria' => "{$categoria}",
             'atributos' => [
                 'background_color' => [
@@ -90,7 +90,7 @@ import BarConfig from './BarConfig';
 const {$name} = () => {
     const [settings, setSettings] = useState(config.atributos);
     const [isOpen, setIsOpen] = useState(false);
-
+    const title = config.title;
     const handleOpen = (e) => {
         setIsOpen(true);
         e.stopPropagation();
@@ -111,7 +111,7 @@ const {$name} = () => {
         >
             <p>{settings.text.default}</p>     
         </div>
-        <BarConfig setSettings={setSettings} settings={settings} isOpen={isOpen} setIsOpen={setIsOpen} />
+        <BarConfig title={title} setSettings={setSettings} settings={settings} isOpen={isOpen} setIsOpen={setIsOpen} />
         </>
     );
 };
@@ -126,7 +126,7 @@ JS;
 import React from "react";
 import { MdClose } from "react-icons/md";
 
-const BarConfig = ({ setSettings, settings, isOpen, setIsOpen }) => {
+const BarConfig = ({ setSettings, settings, isOpen, setIsOpen,title }) => {
     function closeModal(e) {
         e.stopPropagation();
         setIsOpen(false);
@@ -143,12 +143,9 @@ const BarConfig = ({ setSettings, settings, isOpen, setIsOpen }) => {
         setSettings(newSettings);
         e.stopPropagation();
     };
-
-    if (!isOpen) return null;
-
     return (
-        <div className="bar-config show" onClick={e=>e.stopPropagation()}>
-            <h2>Ajuste as configurações do seu componente</h2>
+        <div className={`bar-config`} onClick={e=>e.stopPropagation()}>
+            <h2>Ajuste as configurações do seu componente: {title}</h2>
             <button onClick={closeModal}>
                 <MdClose />
             </button>
